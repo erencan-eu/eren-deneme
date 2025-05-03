@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Çağrı Lift Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="menu">
+    <button onclick="showSection('bakim')">Bakımlar</button>
+    <button onclick="showSection('montaj')">Montajlar</button>
+    <button onclick="showSection('revizyon')">Revizyonlar</button>
+  </div>
+
+  <div id="bakim" class="section">
+    <h2>Bakımlar</h2>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>1. Bina</h3>
+      <p><strong>Yönetici:</strong> Eren Can Öztürk</p>
+      <p><strong>Telefon:</strong> 0530 069 3934</p>
+      <p><strong>Şifre:</strong> 2525</p>
+      <p><strong>Konum:</strong> <a href="https://maps.app.goo.gl/BYBGS7PiTQJN5ioKA" target="_blank">Haritada Aç</a></p>
+    </div>
+  </div>
+
+  <div id="montaj" class="section" style="display:none;">
+    <h2>Montajlar</h2>
+    <div class="card">
+      <h3>Bora İnşaat</h3>
+      <label><input type="checkbox"> Yapıldı</label>
+      <label><input type="checkbox"> Yapılmadı</label>
+    </div>
+  </div>
+
+  <div id="revizyon" class="section" style="display:none;">
+    <h2>Revizyonlar</h2>
+    <div class="card">
+      <h3>1. Bina</h3>
+      <p><strong>Eksikler:</strong></p>
+      <textarea rows="3" placeholder="Eksikleri yazınız..."></textarea>
+      <p><strong>Malzemeler:</strong></p>
+      <textarea rows="3" placeholder="Malzemeleri yazınız..."></textarea>
+      <label><input type="checkbox"> Yapıldı</label>
+      <label><input type="checkbox"> Yapılmadı</label>
+    </div>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function toggleCard(card) {
+      card.classList.toggle('expanded');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Çağrı Lift Asansör</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio autoplay loop muted id="girisMuzik">
+    <source src="assets/sarki.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="giris-container">
+    <img src="assets/logo.png" class="logo">
+    <h1>Çağrı Lift Asansör Paneli</h1>
+    <input type="password" id="sifre" placeholder="Şifre">
+    <button onclick="girisYap()">Giriş Yap</button>
+    <p id="hata" class="hata"></p>
+  </div>
+
+  <script>
+    function girisYap() {
+      const sifre = document.getElementById("sifre").value;
+      if (sifre === "eren2525") {
+        window.location.href = "panel.html";
+      } else {
+        document.getElementById("hata").textContent = "Hatalı şifre!";
+      }
+    }
+  </script>
+</body>
+</html>
